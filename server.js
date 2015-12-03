@@ -9,8 +9,9 @@ var token = '148205640:AAFwHnekNvg_6TAFUTiDr6f8l5jZXhgKlAo';
 
 
 function getImage(query, callback){
-	jsdom.env('http://images.google.com/search?tbm=isch&q=' + query + '&tbs=itp:photo', [jquery], function (err, window) {
-		request(window.$('#res img')[0].src).pipe(fs.createWriteStream('img.jpg')).on('close', callback);
+	jsdom.env('http://yandex.ru/images/search?text=' + query + '&tbs=itp:photo', [jquery], function (err, window) {
+		request(window.$('div.serp-item__preview a')[0].onmousedown.toString().match(/"href":"(.*)"/)[0])
+			.pipe(fs.createWriteStream('img.jpg')).on('close', callback);
 	});
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "borodin-bot",
+  "name": "topic-generator-bot",
   "version": "0.0.1",
   "description": "topic bot",
   "main": "server.js",
