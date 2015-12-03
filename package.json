@@ -1,0 +1,22 @@
+{
+  "name": "borodin-bot",
+  "version": "0.0.1",
+  "description": "topic bot",
+  "main": "server.js",
+  "start": "node server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
+  "author": "borodin",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^7.1.1",
+    "node-telegram-bot-api": "^0.12.1",
+    "request": "^2.67.0"
+  }
+}
