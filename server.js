@@ -5,12 +5,11 @@ var fs = require("fs");
 var request = require("request");
 
 var jquery = "http://code.jquery.com/jquery.js";
-var token = '148205640:AAFwHnekNvg_6TAFUTiDr6f8l5jZXhgKlAo';
 
 
 function getImage(query, callback){
-	jsdom.env('http://yandex.ru/images/search?text=' + query + '&tbs=itp:photo', [jquery], function (err, window) {
-		request(window.$('div.serp-item__preview a')[0].onmousedown.toString().match(/"href":"(.*)"/)[0])
+	jsdom.env('https://yandex.ru/images/search?text=' + query, [jquery], function (err, window) {
+		request(window.$('div.serp-item__preview a')[0].getAttribute('onmousedown').match(/"href":"(.*)"/)[1])
 			.pipe(fs.createWriteStream('img.jpg')).on('close', callback);
 	});
 }
